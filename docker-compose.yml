@@ -1,0 +1,31 @@
+version: '3'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app   
+  mongodb:
+    image: mongo
+    environment:
+        MONGO_INITDB_ROOT_USERNAME:
+        MONGO_INITDB_ROOT_PASSWORD:
+        MONGO_INITDB_DATABASE: qna
+        MONGO_INITDB_COLLECTION: products
+    container_name: mongodbqna
+    ports:
+      - 27018:27017
+    volumes:
+      - ./db_data/mongodb:/data/db
+  mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=qna
+      - MYSQL_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    container_name: mysqlqna
+    ports:
+      - 3307:3306
+    volumes:
+      - ./db_data/mysql:/var/lib/mysql
