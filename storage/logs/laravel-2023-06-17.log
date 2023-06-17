@@ -36,3 +36,4 @@
 #31 /Users/naeemasghar/personal/task-xml/task-xml/qna(35): LaravelZero\\Framework\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #32 {main}
 "} 
+[2023-06-17 14:57:56] development.INFO: 3449 products are saved in mongodb successfully.  
